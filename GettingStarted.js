@@ -2,9 +2,13 @@ import React from "react"
 import { SafeAreaView, View, Text, TextInput, Pressable, StatusBar, StyleSheet } from "react-native"
 import Fontisto from '@expo/vector-icons/Fontisto';
 
-const GettingStartedScreen = () => {
+const GettingStartedScreen = ( {navigation}) => {
   
   const [name, setName] = React.useState("");
+
+  const directToMainScreen = () => {
+    navigation.navigate("ToDo", { name: name });
+  }
 
   return <SafeAreaView style={style.container}>
     <View style={style.item}>
@@ -20,7 +24,7 @@ const GettingStartedScreen = () => {
       </View>
     </View>
     <View style={style.item}>
-      <Pressable style={style.button}>
+      <Pressable style={style.button} onPress={() => directToMainScreen()}>
         <Text style={{color: "white"}}>GET STARTED -></Text>
       </Pressable>
     </View>
