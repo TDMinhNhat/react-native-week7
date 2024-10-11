@@ -13,12 +13,11 @@ const ToDoScreen = ({ route, navigation }) => {
     async function getTodo() {
       await axios.get("https://66f5fc36436827ced9759ca6.mockapi.io/todo").then(response => setTodo(response.data))
     }
-
     getTodo()
-  }, [])
+  })
 
   const addToDo = () => {
-
+    navigation.navigate("AddJob")
   }
 
   const renderItem = (item) => {

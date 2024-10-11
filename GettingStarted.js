@@ -1,5 +1,5 @@
 import React from "react"
-import { SafeAreaView, View, Text, TextInput, Pressable, StatusBar, StyleSheet } from "react-native"
+import { SafeAreaView, View, Text, TextInput, Pressable, StatusBar, StyleSheet, Image } from "react-native"
 import Fontisto from '@expo/vector-icons/Fontisto';
 
 const GettingStartedScreen = ( {navigation}) => {
@@ -12,7 +12,9 @@ const GettingStartedScreen = ( {navigation}) => {
 
   return <SafeAreaView style={style.container}>
     <View style={style.item}>
-      <View style={{width: 258, height: 258}}></View>
+      <View style={{width: 258, height: 258}}>
+        <Image source={require("./assets/logo.png")} style={{width: 258, height: 258}} />
+      </View>
     </View>
     <View style={style.item}>
       <Text style={style.title}>MANAGE YOUR TASK</Text>
